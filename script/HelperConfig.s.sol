@@ -3,9 +3,9 @@ pragma solidity ^0.8.19;
 
 import {MockV3Aggregator} from "../test/mocks/MockV3Aggregator.sol";
 import {Script} from "forge-std/Script.sol";
-import {ERC20Mock} from "lib/openzeppelin-contracts/contracts/mocks/token/ERC20Mock.sol";
+import {ERC20Mock} from "@openzeppelin/contracts/mocks/ERC20Mock.sol";
 
-contract HelperConfig is Script {
+contract HelperConfig is Script{
     NetworkConfig public activeNetworkConfig;
 
     uint8 public constant DECIMALS = 8;
@@ -20,14 +20,14 @@ contract HelperConfig is Script {
         uint256 deployerKey;
     }
 
-   // uint256 public  DEFAULT_ANVIL_PRIVATE_KEY = 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80;
+    uint256 public DEFAULT_ANVIL_PRIVATE_KEY = 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80;
 
     constructor() {
         if (block.chainid == 11155111) {
             activeNetworkConfig = getSepoliaEthConfig();
-        } /*else {
+        } else {
             activeNetworkConfig = getOrCreateAnvilEthConfig();
-        } */
+        }
     }
 
     function getSepoliaEthConfig() public view returns (NetworkConfig memory sepoliaNetworkConfig) {
@@ -40,7 +40,7 @@ contract HelperConfig is Script {
         });
     }
 
-   /* function getOrCreateAnvilEthConfig() public returns (NetworkConfig memory anvilNetworkConfig) {
+    function getOrCreateAnvilEthConfig() public returns (NetworkConfig memory anvilNetworkConfig) {
         // Check to see if we set an active network config
         if (activeNetworkConfig.wethUsdPriceFeed != address(0)) {
             return activeNetworkConfig;
@@ -68,5 +68,4 @@ contract HelperConfig is Script {
             deployerKey: DEFAULT_ANVIL_PRIVATE_KEY
         });
     }
-    */
 }
