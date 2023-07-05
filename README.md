@@ -40,19 +40,14 @@ This project is meant to be a stablecoin where users can deposit WETH and WBTC i
 ## Quickstart
 
 ```
-git clone https://github.com/Cyfrin/foundry-defi-stablecoin-f23
-cd foundry-defi-stablecoin-f23
+git clone https://github.com/aliweb3/StableCoin_2023
+cd StableCoin_2023
 forge build
 ```
 
-### Optional Gitpod
-
-If you can't or don't want to run and install locally, you can work with this repo in Gitpod. If you do this, you can skip the `clone this repo` part.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#github.com/PatrickAlphaC/foundry-smart-contract-lottery-f23)
-
 # Updates
-- The latest version of openzeppelin-contracts has changes in the ERC20Mock file. To follow along with the course, you need to install version 4.8.3 which can be done by ```forge install openzeppelin/openzeppelin-contracts@v4.8.3 --no-commit``` instead of ```forge install openzeppelin/openzeppelin-contracts --no-commit```
+
+- The latest version of openzeppelin-contracts has changes in the ERC20Mock file. To follow along with the course, you need to install version 4.8.3 which can be done by `forge install openzeppelin/openzeppelin-contracts@v4.8.3 --no-commit` instead of `forge install openzeppelin/openzeppelin-contracts --no-commit`
 
 # Usage
 
@@ -76,14 +71,14 @@ make deploy
 
 ## Testing
 
-We talk about 4 test tiers in the video. 
+We talk about 4 test tiers in the video.
 
 1. Unit
 2. Integration
 3. Forked
 4. Staging
 
-In this repo we cover #1 and Fuzzing. 
+In this repo we cover #1 and Fuzzing.
 
 ```
 forge test
@@ -95,12 +90,11 @@ forge test
 forge coverage
 ```
 
-and for coverage based testing: 
+and for coverage based testing:
 
 ```
 forge coverage --report debug
 ```
-
 
 # Deployment to a testnet or mainnet
 
@@ -126,11 +120,11 @@ make deploy ARGS="--network sepolia"
 
 ## Scripts
 
-Instead of scripts, we can directly use the `cast` command to interact with the contract. 
+Instead of scripts, we can directly use the `cast` command to interact with the contract.
 
 For example, on Sepolia:
 
-1. Get some WETH 
+1. Get some WETH
 
 ```
 cast send 0xdd13E55209Fd76AfE204dBda4007C227904f0a81 "deposit()" --value 0.1ether --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY
@@ -148,7 +142,6 @@ cast send 0xdd13E55209Fd76AfE204dBda4007C227904f0a81 "approve(address,uint256)" 
 cast send 0x091EA0838eBD5b7ddA2F2A641B068d6D59639b98 "depositCollateralAndMintDsc(address,uint256,uint256)" 0xdd13E55209Fd76AfE204dBda4007C227904f0a81 100000000000000000 10000000000000000 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY
 ```
 
-
 ## Estimate gas
 
 You can estimate how much gas things cost by running:
@@ -159,23 +152,16 @@ forge snapshot
 
 And you'll see and output file called `.gas-snapshot`
 
-
 # Formatting
 
-
 To run code formatting:
+
 ```
 forge fmt
 ```
 
-
 # Thank you!
 
-If you appreciated this, feel free to follow me or donate!
+Ali haghshenas
 
-ETH/Arbitrum/Optimism/Polygon/etc Address: 0x9680201d9c93d65a3603d2088d125e955c73BD65
-
-[![Patrick Collins Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/PatrickAlphaC)
-[![Patrick Collins YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCn-3f8tw_E1jZvhuHatROwA)
-[![Patrick Collins Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/patrickalphac/)
-[![Patrick Collins Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@patrick.collins_58673/)
+aliweb3.sol@gmail.com
